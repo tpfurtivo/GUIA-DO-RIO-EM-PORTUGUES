@@ -5,26 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guia Turístico do Rio de Janeiro</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  
   <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1195351395195824');
-    fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1195351395195824');
+  fbq('track', 'PageView');
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1195351395195824&ev=PageView&noscript=1"/>
-  </noscript>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1195351395195824&ev=PageView&noscript=1"
+  /></noscript>
   <!-- End Meta Pixel Code -->
-
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -140,7 +137,46 @@
 </head>
 <body>
 <div class="container">
-  <!-- Conteúdo da página continua normalmente... -->
+
+  <h1>Guia Turístico do Rio de Janeiro</h1>
+  <p class="subtitle">Explore os pontos turísticos mais incríveis, descubra a cultura carioca e planeje sua viagem com segurança e praticidade. Este guia é o seu melhor companheiro na Cidade Maravilhosa.</p>
+  <img src="mockup-guia-rio.png" alt="Mockup Guia Rio" class="mockup">
+
+  <a href="#comprar" style="text-decoration: none;">
+    <div style="background-color: #d32f2f; color: white; font-size: 28px; padding: 15px; border-radius: 8px; margin: 20px 0; font-weight: bold; animation: piscar 1.2s infinite;">
+      ⏳ Oferta termina em: <span id="contador">15:00</span>
+    </div>
+  </a>
+
+  <a href="https://pay.kiwify.com.br/j6pZaq7" class="botao-comprar" id="comprar">Comprar Agora</a>
+
+  <div style="margin-top: 20px; display: flex; justify-content: center;">
+    <img src="SEGURANCA.png" alt="Selos de Confiança" style="max-width: 500px; height: auto;">
+  </div>
+
+  <a href="#comprar" class="botao-flutuante">Comprar Agora</a>
+
+  <footer>
+    <p>&copy; 2025 Guia Turístico RJ - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let tempo = 15 * 60;
+      function atualizarContador() {
+        const minutos = Math.floor(tempo / 60);
+        const segundos = tempo % 60;
+        const formatado = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+        document.getElementById("contador").textContent = formatado;
+        if (tempo > 0) {
+          tempo--;
+          setTimeout(atualizarContador, 1000);
+        }
+      }
+      atualizarContador();
+    });
+  </script>
+
 </div>
 </body>
 </html>
